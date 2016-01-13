@@ -1,57 +1,157 @@
+// stylesheet for sdemos.com
+// by: stphndemos
+
+/* css reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
 body {
-    color: black;
-    font-size: 16px;
-    margin: 0px auto 0px auto;
-    width: 600px;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* end css reset */
+
+
+body {
+//    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+//    font-family: Verdana, Geneva, sans-serif;
+    font-family : Arial, Helvetica, sans-serif;
+    color       : #303030;
+    width       : 702px;
+    margin      : 0 auto;
 }
 
-div#header {
-    border-bottom: 2px solid black;
-    margin-bottom: 30px;
-    padding: 12px 0px 12px 0px;
+p {
+    line-height : 1.25em;
 }
 
-div#logo a {
-    color: black;
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
+.content {
 }
 
-div#header #navigation {
-    text-align: right;
+.header {
+    margin : 0 auto;
 }
 
-div#header #navigation a {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 12px;
-    text-decoration: none;
-    text-transform: uppercase;
+.name {
+    font-size : 4em;
+    display   : table;
+    padding   : 20px 0px;
+    margin    : 0 auto;
 }
 
-div#footer {
-    border-top: solid 2px black;
-    color: #555;
-    font-size: 12px;
-    margin-top: 30px;
-    padding: 12px 0px 12px 0px;
-    text-align: right;
+.name a {
+    text-decoration : none;
+    color           : #000000;
 }
 
-h1 {
-    font-size: 24px;
+.bio {
 }
 
-h2 {
-    font-size: 20px;
+.pic_container {
+    float  : right;
+    width  : 200px;
+    height : auto;
+    margin : 5px;
 }
 
-div.info {
-    color: #555;
-    font-size: 14px;
-    font-style: italic;
+.pic {
+    width   : 100%;
+    height  : auto;
+    padding : 1px;
+    border  : 1px solid #000066;
+}
+
+ul {
+    list-style : none;
+    margin     : 0;
+    padding    : 0;
+}
+
+.projects li {
+    padding : 5px 0px;
+}
+
+.projects p {
+    margin : 5px 20px;
+}
+
+.navbar a:link, .navbar a:visited {
+    display          : block;
+    width            : 140px;
+    font-weight      : bold;
+    font-size        : 1.1em;
+    color            : #FFFFFF;
+    background-color : #BBBBBB;
+    text-align       : center;
+    text-decoration  : none;
+    text-transform   : uppercase;
+}
+
+.navbar a:hover, .navbar a:active {
+    background-color : #888888;
+}
+
+.projects a:link, .projects a:visited {
+    text-decoration : none;
+    border-bottom   : 1px solid #c0c0c0;
+    color           : #303030;
+}
+
+.projects a:link {
+}
+
+.projects a:visited {
+}
+
+.projects a:hover, .projects a:active {
+    text-decoration : none;
+    border-bottom   : 1px solid #c0c0c0;
+    color           : #999;
+}
+
+.navbar {
+    overflow : hidden;
+    border : 1px solid #888888;
+}
+
+.navbar li {
+    float : left;
 }
 
