@@ -81,8 +81,10 @@ ul {
 }
 
 .name {
-    font-size : 26px;
-    margin    : 0 1px;
+    font-size      : 26px;
+    margin         : 0 1px;
+    padding-bottom : 10px;
+    border-bottom  : 1px solid black;
 }
 
 .name a {
@@ -96,14 +98,14 @@ ul {
 }
 
 .pic {
-    width         : 198px;
-    height        : auto;
-    border        : 1px solid #006;
+    width  : 198px;
+    height : auto;
+    border : 1px solid #006;
 }
 
 .navbar {
     overflow   : hidden;
-    margin-top : 20px;
+    margin-top : 10px;
 }
 
 .navbar li {
