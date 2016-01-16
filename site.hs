@@ -10,10 +10,10 @@ postCtx :: Context String
 postCtx  = dateField "date" "%B %e, %Y"
  `mappend` defaultContext
 
-archiveCtx :: [Item String] -> Context String
-archiveCtx posts = listField "posts" postCtx (return posts)
-         `mappend` constField "title" "Archives"
-         `mappend` defaultContext
+postListCtx :: [Item String] -> Context String
+postListCtx posts = listField "posts" postCtx (return posts)
+          `mappend` constField "title" "Posts"
+          `mappend` defaultContext
 
 indexCtx :: Context String
 indexCtx = constField "title" "Stephen Demos"
@@ -43,13 +43,14 @@ posts = match "posts/*" $ do
         >>= relativizeUrls
 
 archive :: Rules ()
-archive = create ["archive.html"] $ do
+archive = create ["posts.html"] $ do
     route idRoute
     compile $ do
         posts <- recentFirst =<< loadAll "posts/*"
         makeItem ""
-            >>= loadAndApplyTemplate "templates/archive.html" (archiveCtx posts)
-            >>= loadAndApplyTemplate "templates/default.html" (archiveCtx posts)
+            >>= loadAndApplyTemplate "templates/post-list.html" (postListCtx posts)
+            >>= loadAndApplyTemplate "templates/title.html"     (postListCtx posts)
+            >>= loadAndApplyTemplate "templates/default.html"   (postListCtx posts)
             >>= relativizeUrls
 
 index :: Rules ()
