@@ -104,3 +104,11 @@ layman -o https://url.of/overlay.xml -f -a overlay-name
 
 This command is described in more detail on the [Layman Gentoo wiki
 page](https://wiki.gentoo.org/wiki/Layman) and `man layman`.
+
+A good reference and some more detail on the components of the repository
+structure for Gentoo (sans `overlay.xml`) can be seen
+[here](https://wiki.gentoo.org/wiki/Repository_format).
+
+Disclaimer: I am nowhere near an expert in Gentoo packaging, I just put this
+together from various scattered resources when trying to do it for easy
+reference.
