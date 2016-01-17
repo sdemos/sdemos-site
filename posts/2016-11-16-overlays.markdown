@@ -109,6 +109,6 @@ A good reference and some more detail on the components of the repository
 structure for Gentoo (sans `overlay.xml`) can be seen
 [here](https://wiki.gentoo.org/wiki/Repository_format).
 
-Disclaimer: I am nowhere near an expert in Gentoo packaging, I just put this
-together from various scattered resources when trying to do it for easy
-reference.
+Disclaimer: I am nowhere near an expert in Gentoo packaging, I just had a hard
+time finding collecting resources for making my own custom Gentoo overlay, and
+so I consolidated all of the information I found here.
