@@ -156,3 +156,8 @@ ul {
 .post-list {
     margin-left : 50px;
 }
+
+.post-list-date {
+    font-size : 15px;
+    color     : #666;
+}
