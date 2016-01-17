@@ -1,7 +1,7 @@
 ---
 title: Custom Gentoo Overlays - The Stupid Simple Guide
 author: Stephen Demos
-date: January 16, 2016
+published: January 16, 2016
 ---
 
 Gentoo makes it really easy for anybody to install custom packages using

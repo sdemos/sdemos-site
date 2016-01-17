@@ -2,8 +2,14 @@
     Posted
     $if(author)$
         by $author$
+    $else$
+        by an idiot
     $endif$
-    on $date$
+    $if(published)$
+        on $published$
+    $else$
+        on idiot day
+    $endif$
 </div>
 
 $body$

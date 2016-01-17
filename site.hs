@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend)
+import           Data.Monoid ((<>))
 import           Hakyll
 
 --------------
@@ -11,12 +11,12 @@ postCtx = defaultContext
 
 postListCtx :: [Item String] -> Context String
 postListCtx posts = listField "posts" postCtx (return posts)
-          `mappend` constField "title" "Posts"
-          `mappend` defaultContext
+                 <> constField "title" "Posts"
+                 <> defaultContext
 
 indexCtx :: Context String
 indexCtx = constField "title" "Stephen Demos"
- `mappend` defaultContext
+        <> defaultContext
 
 ------------
 -- Routes --
@@ -41,8 +41,8 @@ posts = match "posts/*" $ do
         >>= loadAndApplyTemplate "templates/default.html" postCtx
         >>= relativizeUrls
 
-archive :: Rules ()
-archive = create ["posts.html"] $ do
+postList :: Rules ()
+postList = create ["posts.html"] $ do
     route idRoute
     compile $ do
         posts <- recentFirst =<< loadAll "posts/*"
@@ -71,6 +71,6 @@ main = hakyll $ do
     images
     css
     posts
-    archive
+    postList
     index
     templates
