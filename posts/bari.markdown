@@ -1,6 +1,7 @@
 ---
 title: Bari - An OpenGL Math library for C
 author: Stephen Demos
+date: January 16, 2016
 ---
 
 [Bari](https://github.com/TravisWhitaker/bari) is an library of OpenGL-centric
