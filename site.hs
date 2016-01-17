@@ -7,8 +7,7 @@ import           Hakyll
 --------------
 
 postCtx :: Context String
-postCtx  = dateField "date" "%B %e, %Y"
- `mappend` defaultContext
+postCtx = defaultContext
 
 postListCtx :: [Item String] -> Context String
 postListCtx posts = listField "posts" postCtx (return posts)
