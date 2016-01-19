@@ -51,7 +51,7 @@ Library, or SOIL, I would have a directory structure like this -
 If you want more information on how to write ebuild files, [Gentoo's Developer
 Guide](https://devmanual.gentoo.org/ebuild-writing/index.html) naturally has a
 very detailed guide. They also have a page on [how to generate Manifest
-files](https://devmanual.gentoo.org/general-concepts/manifest/index.html). 
+files](https://wiki.gentoo.org/wiki/Repository_format/package/Manifest).
 
 The inside the `metadata` folder, we have the `layout.conf` file, which for our
 little overlay simply looks like this - 
@@ -60,19 +60,19 @@ little overlay simply looks like this -
 masters = gentoo
 ```
 
-This line says that our overlay requires the gentoo repository. You could also
+This line says that our overlay requires the Gentoo repository. You could also
 require other overlays be installed before this one, if your package requires
 it.
 
 Inside the `profiles` folder, we have the `repo_name` file. This very simple
-file is pretty self-explanitory, it just contains the name of the overlay on
+file is pretty self-explanatory, it just contains the name of the overlay on
 one line.
 
 The last file to go over is arguably the one that makes this repository into an
-overlay. This xml file, which I called `overlay.xml`, but could really be
-called whatever you want, contains the information about the overlay necessary
-for layman to automatically add it to your personal Portage tree. This is the
-file that you tell layman about when adding it, and it takes care of the rest.
+overlay. This xml file, commonly called `overlay.xml` or `repositories.xml`,
+contains the information about the overlay necessary for layman to
+automatically add it to your personal Portage tree. This is the file that you
+tell layman about when adding it, and it takes care of the rest.
 
 An example of the xml file for our overlay is
 
