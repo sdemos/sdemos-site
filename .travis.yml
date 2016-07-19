@@ -1,0 +1,15 @@
+before_install:
+    - wget https://github.com/commercialhaskell/stack/releases/download/v1.1.2/stack-1.1.2-linux-x86_64.tar.gz
+    - tar -xvf stack-1.1.2-linux-x86_64.tar.gz
+    - sudo cp stack-1.1.2-linux-x86_64/stack /usr/bin/stack
+    - stack update
+
+install:
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq libgmp10 libgmp-dev libgmp3-dev
+    - stack setup
+    - stack build --dependencies-only
+
+script:
+    - stack install
+    - sdemos-site build
