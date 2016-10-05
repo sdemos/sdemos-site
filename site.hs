@@ -37,11 +37,6 @@ css = match "css/*" $ do
     route   idRoute
     compile compressCssCompiler
 
-resume :: Rules ()
-resume = match "resume.pdf" $ do
-    route   idRoute
-    compile copyFileCompiler
-
 posts :: Rules ()
 posts = match "posts/*" $ do
     route $ setExtension "html"
@@ -102,7 +97,6 @@ main :: IO ()
 main = hakyll $ do
     images
     css
-    resume
     posts
     postList
     projects
