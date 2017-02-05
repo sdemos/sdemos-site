@@ -19,9 +19,10 @@ projectListCtx projects = listField "items" postCtx (return projects)
                        <> constField "title" "Project Write-ups"
                        <> defaultContext
 
-indexCtx :: Context String
-indexCtx = constField "title" "Stephen Demos"
-        <> defaultContext
+indexCtx :: [Item String] -> Context String
+indexCtx projects = listField "items" defaultContext (return projects)
+                    <> constField "title" "Stephen Demos"
+                    <> defaultContext
 
 ------------
 -- Routes --
@@ -80,11 +81,13 @@ projectList = create ["projects.html"] $ do
             >>= relativizeUrls
 
 index :: Rules ()
-index = match "index.html" $ do
+index = create ["index.html"] $ do
     route idRoute
-    compile $ getResourceBody
-            >>= applyAsTemplate indexCtx
-            >>= loadAndApplyTemplate "templates/default.html" indexCtx
+    compile $ do
+      projects <- recentFirst =<< loadAll "projects/*"
+      makeItem ""
+            >>= loadAndApplyTemplate "templates/index.html" (indexCtx projects)
+            >>= loadAndApplyTemplate "templates/default.html" (indexCtx projects)
             >>= relativizeUrls
 
 templates :: Rules ()
