@@ -1,0 +1,15 @@
+<p>Some projects that I've worked on - </p>
+<ul class="project-list">
+    $for(items)$
+        <li class="project-list-project">
+            <a class="project-list-title" href="$project-url$">$title$</a>
+            $if(github)$
+            - <a href="$github$">Github</a>
+            $endif$
+            $if(published)$
+            - <a href="$url$">Write-up</a>
+            $endif$
+            <p class="project-list-summary">$summary$</p>
+        </li>
+    $endfor$
+</ul>

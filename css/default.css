@@ -141,19 +141,7 @@ ul {
 .bio {
 }
 
-.project-title {
-    font-weight : bold;
-}
-
 .page-title {
-}
-
-.projects li {
-    padding : 5px 0px;
-}
-
-.projects p {
-    margin : 5px 20px;
 }
 
 .post-info {
@@ -167,6 +155,18 @@ ul {
 .post-list-date {
     font-size : 15px;
     color     : #666;
+}
+
+.project-list-project {
+    padding : 5px 0px;
+}
+
+.project-list-title {
+    font-weight : bold;
+}
+
+.project-list-summary {
+    margin : 5px 20px;
 }
 
 code *,

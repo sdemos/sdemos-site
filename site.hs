@@ -54,7 +54,7 @@ postList = create ["posts.html"] $ do
     compile $ do
         posts <- recentFirst =<< loadAll "posts/*"
         makeItem ""
-            >>= loadAndApplyTemplate "templates/list.html"      (postListCtx posts)
+            >>= loadAndApplyTemplate "templates/post-list.html"      (postListCtx posts)
             >>= loadAndApplyTemplate "templates/title.html"     (postListCtx posts)
             >>= loadAndApplyTemplate "templates/default.html"   (postListCtx posts)
             >>= relativizeUrls
@@ -75,7 +75,7 @@ projectList = create ["projects.html"] $ do
     compile $ do
         projects <- recentFirst =<< loadAll "projects/*"
         makeItem ""
-            >>= loadAndApplyTemplate "templates/list.html"      (projectListCtx projects)
+            >>= loadAndApplyTemplate "templates/post-list.html"      (projectListCtx projects)
             >>= loadAndApplyTemplate "templates/title.html"     (projectListCtx projects)
             >>= loadAndApplyTemplate "templates/default.html"   (projectListCtx projects)
             >>= relativizeUrls
@@ -86,6 +86,7 @@ index = create ["index.html"] $ do
     compile $ do
       projects <- recentFirst =<< loadAll "projects/*"
       makeItem ""
+            >>= loadAndApplyTemplate "templates/project-list.html" (indexCtx projects)
             >>= loadAndApplyTemplate "templates/index.html" (indexCtx projects)
             >>= loadAndApplyTemplate "templates/default.html" (indexCtx projects)
             >>= relativizeUrls
