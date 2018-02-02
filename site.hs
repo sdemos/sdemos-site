@@ -19,10 +19,11 @@ projectListCtx projects = listField "items" postCtx (return projects)
                        <> constField "title" "Project Write-ups"
                        <> defaultContext
 
-indexCtx :: [Item String] -> Context String
-indexCtx projects = listField "items" defaultContext (return projects)
-                    <> constField "title" "Stephen Demos"
-                    <> defaultContext
+indexCtx :: [Item String] -> Item String -> Context String
+indexCtx projects bio = listField "items" defaultContext (return projects)
+                     <> constField "bio" (itemBody bio)
+                     <> constField "title" "Stephen Demos"
+                     <> defaultContext
 
 ------------
 -- Routes --
@@ -85,14 +86,18 @@ index = create ["index.html"] $ do
     route idRoute
     compile $ do
       projects <- recentFirst =<< loadAll "projects/*"
+      bio <- load "bio.markdown"
       makeItem ""
-            >>= loadAndApplyTemplate "templates/project-list.html" (indexCtx projects)
-            >>= loadAndApplyTemplate "templates/index.html" (indexCtx projects)
-            >>= loadAndApplyTemplate "templates/default.html" (indexCtx projects)
+            >>= loadAndApplyTemplate "templates/project-list.html" (indexCtx projects bio)
+            >>= loadAndApplyTemplate "templates/bio.html"          (indexCtx projects bio)
+            >>= loadAndApplyTemplate "templates/default.html"      (indexCtx projects bio)
             >>= relativizeUrls
 
 templates :: Rules ()
 templates = match "templates/*" $ compile templateCompiler
+
+bio :: Rules ()
+bio = match "bio.markdown" $ compile pandocCompiler
 
 ----------
 -- Main --
@@ -105,5 +110,6 @@ main = hakyll $ do
     postList
     projects
     projectList
+    bio
     index
     templates
