@@ -2,6 +2,7 @@
 title: Lindenmayer Systems
 author: Stephen Demos
 date: January 27, 2016
+index-list: true
 project-url: https://github.com/sdemos/lsystems
 github: https://github.com/sdemos/lsystems
 summary: >

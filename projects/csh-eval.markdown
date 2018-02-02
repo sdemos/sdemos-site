@@ -2,6 +2,7 @@
 title: CSH Evaluations
 author: Stephen Demos
 date: January 27, 2016
+index-list: true
 project-url: https://github.com/ComputerScienceHouse/csh-eval
 github: https://github.com/ComputerScienceHouse/csh-eval
 summary: >

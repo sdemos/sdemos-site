@@ -2,6 +2,7 @@
 title: BingeHack4
 author: Stephen Demos
 date: January 27, 2016
+index-list: true
 project-url: https://github.com/ComputerScienceHouse/bingehack4
 github: https://github.com/ComputerScienceHouse/bingehack4
 summary: >

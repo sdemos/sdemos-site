@@ -2,6 +2,7 @@
 title: DemOS
 author: Stephen Demos
 date: February 1, 2018
+index-list: true
 project-url: https://github.com/sdemos/demos
 github: https://github.com/sdemos/demos
 summary: >
