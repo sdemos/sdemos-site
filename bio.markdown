@@ -1,5 +1,5 @@
 I am a software engineer at [Red Hat][1] ([formerly][2] at [CoreOS][3]). I work
-on tools for [Container Linux][4], primarily surrounding it's automated update
+on tools for [Container Linux][4], primarily surrounding its automated update
 model, such as [CoreUpdate][5] and the [Container Linux Update Operator][6], but
 also working on the cloud provider metadata fetcher [coreos-metadata][7], the
 ssh authorized keys file manager [update-ssh-keys][8], and components that
